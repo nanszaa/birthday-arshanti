@@ -1,0 +1,723 @@
+
+/* ===== DASAR WEBSITE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: #fff7f8;
+    color: #6d394c;
+}
+
+.birthday-page {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 35px 20px;
+    background:
+        radial-gradient(ellipse at top left, #ffe0eb 0%, transparent 45%),
+        radial-gradient(ellipse at bottom right, #f9d6e5 0%, transparent 45%),
+        #fff7f8;
+}
+
+/* ===== KARTU UTAMA ===== */
+.welcome-card {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 560px;
+    padding: 55px 28px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid #f4d7e2;
+    border-radius: 240px 240px 28px 28px;
+    box-shadow: 0 20px 65px rgba(179, 94, 128, 0.12);
+    animation: appear 1.2s ease both;
+}
+
+.eyebrow {
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: #b77b94;
+    margin-bottom: 26px;
+}
+
+.flower {
+    font-size: 43px;
+    margin-bottom: 20px;
+    animation: float 3s ease-in-out infinite;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(30px, 7vw, 45px);
+    font-weight: 500;
+    line-height: 1.3;
+    color: #8e526c;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 5vw, 30px);
+    font-style: italic;
+    font-weight: 500;
+    color: #c17c9a;
+    margin-top: 7px;
+}
+
+.love-note {
+    margin-top: 24px;
+    font-size: 14px;
+    line-height: 2;
+    color: #8b7180;
+}
+
+.divider-heart {
+    margin: 25px 0;
+    font-size: 13px;
+    letter-spacing: 5px;
+    color: #d49ab1;
+}
+
+.birthday-date {
+    font-size: 12px;
+    color: #a98a98;
+    margin-bottom: 25px;
+}
+
+/* ===== TOMBOL ===== */
+.love-button {
+    padding: 15px 27px;
+    border: 1px solid #dba5bb;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #e8b1c7, #d38eac);
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    box-shadow: 0 8px 22px rgba(190, 112, 148, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.love-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 26px rgba(190, 112, 148, 0.3);
+}
+
+.signature {
+    margin-top: 28px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: #b18a9b;
+}
+
+/* ===== ORNAMEN HATI ===== */
+.tiny-heart {
+    position: absolute;
+    color: #dba0b8;
+    opacity: 0.65;
+    animation: float 4s ease-in-out infinite;
+}
+
+.heart-one {
+    top: 15%;
+    left: 12%;
+    font-size: 38px;
+}
+
+.heart-two {
+    top: 25%;
+    right: 12%;
+    font-size: 28px;
+    animation-delay: 1s;
+}
+
+.heart-three {
+    bottom: 18%;
+    right: 17%;
+    font-size: 23px;
+    animation-delay: 2s;
+}
+
+footer {
+    margin-top: 28px;
+    text-align: center;
+}
+
+footer p {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #b68b9e;
+}
+
+/* ===== ANIMASI ===== */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== TAMPILAN HP ===== */
+@media (max-width: 480px) {
+    .birthday-page {
+        padding: 25px 16px;
+    }
+
+    .welcome-card {
+        padding: 48px 20px;
+        border-radius: 180px 180px 24px 24px;
+    }
+
+    .eyebrow {
+        letter-spacing: 2.5px;
+        font-size: 9px;
+    }
+
+    .heart-one {
+        left: 5%;
+    }
+
+    .heart-two {
+        right: 5%;
+    }
+}
+
+
+/* ===== HALAMAN KEJUTAN ===== */
+.surprise-card {
+    display: none;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 560px;
+    padding: 45px 30px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #f4d7e2;
+    border-radius: 30px;
+    box-shadow: 0 20px 65px rgba(179, 94, 128, 0.14);
+}
+
+.surprise-card.show {
+    display: block;
+    animation: appear 0.9s ease both;
+}
+
+.surprise-heart {
+    font-size: 55px;
+    margin-bottom: 20px;
+    animation: heartbeat 1.4s infinite;
+}
+
+.surprise-title {
+    margin: 20px 0;
+    line-height: 1.5;
+}
+
+.surprise-message {
+    color: #8b7180;
+    font-size: 14px;
+    line-height: 2;
+    margin: 22px 0;
+}
+
+.heart-decoration {
+    color: #d38eac;
+    letter-spacing: 9px;
+    margin: 25px 0;
+    font-size: 20px;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+@media (max-width: 480px) {
+    .surprise-card {
+        padding: 35px 22px;
+    }
+
+    .surprise-message {
+        font-size: 13px;
+    }
+}
+
+
+/* ===== SURAT CINTA ===== */
+.letter-card {
+    display: none;
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: 600px;
+    padding: 35px 22px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid #f1d5df;
+    border-radius: 28px;
+    box-shadow: 0 20px 65px rgba(179, 94, 128, 0.14);
+}
+
+.letter-card.show {
+    display: block;
+    animation: appear 0.9s ease both;
+}
+
+.letter-flower {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.letter-title {
+    margin: 15px 0 25px;
+}
+
+.letter-paper {
+    padding: 28px 22px;
+    background: #fffaf2;
+    border: 1px solid #f0e3d4;
+    border-radius: 5px;
+    box-shadow: 0 5px 18px rgba(120, 85, 80, 0.07);
+    text-align: left;
+}
+
+.letter-paper p {
+    margin-bottom: 19px;
+    color: #79616a;
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    line-height: 2;
+}
+
+.letter-paper .letter-closing {
+    margin-top: 28px;
+    margin-bottom: 0;
+    color: #b76f8d;
+    font-style: italic;
+    text-align: right;
+}
+
+.back-button {
+    margin-top: 25px;
+    padding: 12px 20px;
+    border: 1px solid #e5bfd0;
+    border-radius: 30px;
+    background: #fff5f8;
+    color: #a56781;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.back-button:hover {
+    background: #f9e1eb;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+    .letter-card {
+        padding: 28px 15px;
+    }
+
+    .letter-paper {
+        padding: 23px 17px;
+    }
+
+    .letter-paper p {
+        font-size: 14px;
+        line-height: 1.9;
+    }
+}
+
+
+/* ===== GALERI KENANGAN ===== */
+.gallery-card {
+    display: none;
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: 700px;
+    padding: 38px 22px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid #f1d5df;
+    border-radius: 28px;
+    box-shadow: 0 20px 65px rgba(179, 94, 128, 0.14);
+}
+
+.gallery-card.show {
+    display: block;
+    animation: appear 0.9s ease both;
+}
+
+.gallery-title {
+    margin: 15px 0;
+}
+
+.gallery-description {
+    margin: 15px auto 28px;
+    max-width: 400px;
+    color: #8b7180;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.photo-item {
+    padding: 9px 9px 15px;
+    background: #fffaf7;
+    border: 1px solid #f1e0e4;
+    border-radius: 8px;
+    box-shadow: 0 7px 20px rgba(150, 95, 115, 0.09);
+    transform: rotate(-1deg);
+    transition: transform 0.3s ease;
+}
+
+.photo-item:nth-child(even) {
+    transform: rotate(1deg);
+}
+
+.photo-item:hover {
+    transform: translateY(-4px) rotate(0deg);
+}
+
+.photo-item img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 4px;
+    background: #f8e6ed;
+}
+
+.photo-item figcaption {
+    margin-top: 12px;
+    color: #a36d84;
+    font-family: 'Playfair Display', serif;
+    font-size: 12px;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+@media (max-width: 480px) {
+    .gallery-card {
+        padding: 30px 14px;
+    }
+
+    .photo-grid {
+        gap: 12px;
+    }
+
+    .photo-item {
+        padding: 6px 6px 12px;
+    }
+
+    .photo-item figcaption {
+        font-size: 10px;
+    }
+}
+
+
+/* ===== PEMUTAR MUSIK ===== */
+.music-player {
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    z-index: 20;
+}
+
+.music-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 16px;
+    border: 1px solid #edc9d8;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #a56781;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+    box-shadow: 0 5px 18px rgba(179, 94, 128, 0.1);
+    transition: all 0.3s ease;
+}
+
+.music-button:hover {
+    background: #fce8ef;
+    transform: translateY(-2px);
+}
+
+.music-button.playing {
+    background: #f7dce7;
+    animation: musicPulse 2s ease-in-out infinite;
+}
+
+@keyframes musicPulse {
+    0%, 100% {
+        box-shadow: 0 5px 18px rgba(179, 94, 128, 0.1);
+    }
+
+    50% {
+        box-shadow: 0 5px 24px rgba(179, 94, 128, 0.28);
+    }
+}
+
+/* Penyesuaian tombol pada HP */
+@media (max-width: 480px) {
+    .music-player {
+        top: 10px;
+        right: 10px;
+    }
+
+    .music-button {
+        padding: 9px 12px;
+        font-size: 11px;
+    }
+}
+
+
+/* ===== ANIMASI HATI BERTERBANGAN ===== */
+.heart-container {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 10;
+    display: none;
+}
+
+.heart-container.active {
+    display: block;
+}
+
+.floating-heart {
+    position: absolute;
+    bottom: -50px;
+    color: #e99ab8;
+    opacity: 0;
+    font-size: 22px;
+    animation: heartRise linear forwards;
+    filter: drop-shadow(0 2px 5px rgba(220, 120, 160, 0.2));
+}
+
+@keyframes heartRise {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(0.7);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.8;
+    }
+
+    80% {
+        opacity: 0.65;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(35deg) scale(1.2);
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .floating-heart {
+        animation-duration: 8s;
+    }
+}
+
+
+/* ===== EFEK KILAU ROMANTIS ===== */
+.floating-heart {
+    text-shadow:
+        0 0 5px #ffffff,
+        0 0 12px #f7a8cb,
+        0 0 20px #f4b6d2;
+}
+
+
+/* ===== DEKORASI KUCING GEMOY ===== */
+.cat-decoration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    margin: 10px auto 18px;
+}
+
+.cute-cat {
+    display: inline-block;
+    font-size: 58px;
+    animation: cuteCatFloat 2s ease-in-out infinite;
+    filter: drop-shadow(0 5px 7px rgba(220, 130, 170, 0.25));
+}
+
+.cat-paw,
+.cat-heart {
+    display: inline-block;
+    font-size: 30px;
+    animation: cuteCatFloat 2.5s ease-in-out infinite;
+}
+
+.cat-heart {
+    animation-delay: 0.5s;
+}
+
+.gallery-caption {
+    text-align: center;
+    color: #c56d91;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.8;
+    margin: 0 0 24px;
+}
+
+.gallery-caption span {
+    font-size: 13px;
+    font-weight: normal;
+    color: #a77b8d;
+}
+
+@keyframes cuteCatFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+    50% {
+        transform: translateY(-8px) rotate(3deg);
+    }
+}
+
+/* Tampilan di HP */
+@media (max-width: 480px) {
+    .cute-cat {
+        font-size: 48px;
+    }
+
+    .cat-paw,
+    .cat-heart {
+        font-size: 25px;
+    }
+
+    .gallery-caption {
+        font-size: 16px;
+    }
+}
+
+/* ===== STIKER KUCING DI FOTO GALERI ===== */
+.photo-item {
+    position: relative;
+    overflow: visible;
+}
+
+.photo-item img {
+    display: block;
+    width: 100%;
+    border-radius: 16px;
+}
+
+.photo-cat-sticker {
+    position: absolute;
+    top: -14px;
+    right: -8px;
+    z-index: 2;
+
+    display: inline-block;
+    padding: 5px 7px;
+    border-radius: 20px;
+
+    background: #fff0f6;
+    border: 2px solid #ffffff;
+    box-shadow: 0 4px 10px rgba(200, 110, 150, 0.2);
+
+    font-size: 20px;
+    transform: rotate(8deg);
+    animation: stickerBounce 2s ease-in-out infinite;
+}
+
+@keyframes stickerBounce {
+    0%, 100% {
+        transform: translateY(0) rotate(8deg);
+    }
+    50% {
+        transform: translateY(-4px) rotate(-5deg);
+    }
+}
+
+@media (max-width: 480px) {
+    .photo-cat-sticker {
+        font-size: 16px;
+        top: -10px;
+        right: -5px;
+    }
+}
+
+
+/* ===== BINGKAI FOTO SCRAPBOOK ===== */
+.photo-item {
+    background: #fffafc;
+    padding: 10px 10px 14px;
+    border: 2px solid #ffe1ec;
+    border-radius: 15px;
+    box-shadow: 0 7px 18px rgba(205, 130, 160, 0.16);
+    transform: rotate(-2deg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-item:nth-child(even) {
+    transform: rotate(2deg);
+}
+
+.photo-item:hover {
+    transform: rotate(0deg) translateY(-6px) scale(1.03);
+    box-shadow: 0 12px 24px rgba(205, 130, 160, 0.25);
+}
+
+.photo-item img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Tampilan HP */
+@media (max-width: 480px) {
+    .photo-item {
+        padding: 7px 7px 10px;
+    }
+}
